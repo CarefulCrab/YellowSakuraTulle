@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Outfit Name</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>You are about to copy the name of the selected outfit.</h1>
+    <p>Please use the channel points feature and paste the name you have just copied here.</p>
+    <p>選択した衣装の名前をコピーしようとしています。チャンネルポイント機能を使用して、コピーした名前をここに貼り付けてください。</p>
+
+    <button onclick="copyToClipboard()">Click to Copy Outfit Name</button>
+
+    <script>
+        function copyToClipboard() {
+            const outfitName = "Yellow Sakura Tulle";  // Replace this with the actual outfit name
+            navigator.clipboard.writeText(outfitName).then(() => {
+                alert("Outfit name copied to clipboard!");
+                window.close();  // This may not work in all browsers
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+
+</body>
+</html>
